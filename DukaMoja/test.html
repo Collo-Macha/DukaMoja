@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce Image Carousel</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+    }
+    .carousel-container {
+      position: relative;
+      width: 90%;
+      max-width: 800px;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .carousel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .carousel img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      border: none;
+      padding: 12px;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 50%;
+      z-index: 10;
+      user-select: none;
+    }
+    .arrow.left {
+      left: 10px;
+    }
+    .arrow.right {
+      right: 10px;
+    }
+    .arrow:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+    .arrow:focus {
+      outline: 2px solid #007bff;
+      outline-offset: 2px;
+    }
+    /* Accessibility for screen readers */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="carousel-container" role="region" aria-label="Product image carousel">
+    <div class="carousel" id="carousel">
+      <img src="https://via.placeholder.com/800x400?text=Product+1+-+Blue+Sneakers" alt="Blue Nike Sneakers Size 10" loading="lazy">
+      <img src="https://via.placeholder.com/800x400?text=Product+2+-+Wireless+Headphones" alt="Sony Wireless Headphones WH-1000XM5" loading="lazy">
+      <img src="https://via.placeholder.com/800x400?text=Product+3+-+Smartwatch" alt="Apple Watch Series 9 Black" loading="lazy">
+    </div>
+    <button class="arrow left" onclick="prevSlide()" aria-label="Previous slide">&#10094;</button>
+    <button class="arrow right" onclick="nextSlide()" aria-label="Next slide">&#10095;</button>
+  </div>
+  <script>
+    const carousel = document.getElementById('carousel');
+    const images = carousel.querySelectorAll('img');
+    const totalImages = images.length;
+    let currentIndex = 0;
+    let autoSlide;
+
+    function showSlide(index) {
+      if (index >= totalImages) currentIndex = 0;
+      else if (index < 0) currentIndex = totalImages - 1;
+      else currentIndex = index;
+      carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    function nextSlide() {
+      showSlide(currentIndex + 1);
+      resetAutoSlide();
+    }
+
+    function prevSlide() {
+      showSlide(currentIndex - 1);
+      resetAutoSlide();
+    }
+
+    function startAutoSlide() {
+      autoSlide = setInterval(nextSlide, 10000); // 10 seconds
+    }
+
+    function resetAutoSlide() {
+      clearInterval(autoSlide);
+      startAutoSlide();
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') prevSlide();
+      if (e.key === 'ArrowRight') nextSlide();
+    });
+
+    // Initial setup
+    showSlide(currentIndex);
+    startAutoSlide();
+  </script>
+</body>
+</html>
