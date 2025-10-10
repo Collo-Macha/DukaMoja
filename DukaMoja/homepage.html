@@ -7,35 +7,101 @@
     <meta name="keywords" content="ecommerce, online shopping, food, dukamoja, deals, discounts">
     <link rel="stylesheet" href="homepage.css">
     <meta name="robots" content="index, follow">
-    <meta http-equiv="refresh" content="10">
     <title>DukaMoja - Home</title>
 </head>
 <body>
     <header>
-        <h1>DukaMoja</h1>
-        <p>Your one-stop shop for everything!</p>
+        <div class="headerWrapper">
+            <nav class="menu">
+                <a href="#">Home</a>
+                <a href="#">Shop</a>
+                <a href="#">Deals</a>
+                <a href="#">Contact</a>
+                <a href="#">Cart</a>
+            </nav>
+            <form class="search-bar" role="search" aria-label="Site search">
+                <input type="search" placeholder="Search products..." name="q">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <section class="hero">
+            <h2>Welcome to DukaMoja </h2>
+            <p>Discover the latest products and exclusive deals. Shop with ease and confidence!</p>
+        </section>
+        <div class="carouselContainer" role="region" aria-label="Product image carousel">
+            <div class="carousel" id="carousel"> 
+                <div class="item">
+                    <img src="need.jpg" alt="Blue Nike Sneakers Size 10" loading="lazy">
+                    <div class="content">
+                        <div class="priceShower">
+                            <div class="price">PRICE</div>
+                            <div class="amount">1500$</div>
+                        </div> 
+                        <div class="buttons">
+                            <button>SEE MORE</button>
+                            <button>BUY NOW</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="melanin.jpg" alt="Apple Watch Series 9 Black" loading="lazy">
+                    <div class="content">
+                        <div class="priceShower">
+                            <div class="price">PRICE</div>
+                            <div class="amount">1500$</div>
+                        </div> 
+                        <div class="buttons">
+                            <button>SEE MORE</button>
+                            <button>BUY NOW</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="world.jpg" alt="Blue Nike Sneakers Size 10" loading="lazy">
+                    <div class="content">
+                        <div class="priceShower">
+                            <div class="price">PRICE</div>
+                            <div class="amount">1500$</div>
+                        </div> 
+                        <div class="buttons">
+                            <button>SEE MORE</button>
+                            <button>BUY NOW</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="thumbnail">
+                
+                <div class="item">
+                    <img src="need.jpg" alt="Apple Watch Series 9 Black" loading="lazy">
+                    <div class="content2">
+                        <div class="price">PRICE</div>
+                        <div class="amount">1500$</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="melanin.jpg" alt="Blue Nike Sneakers Size 10" loading="lazy">
+                    <div class="content2">
+                        <div class="price">PRICE</div>
+                        <div class="amount">1500$</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="world.jpg" alt="Blue Nike Sneakers Size 10" loading="lazy">
+                    <div class="content2">
+                        <div class="price">PRICE</div>
+                        <div class="amount">1500$</div>
+                    </div>
+                </div>
+            </div>
+            <div class="arrows">
+                <button id="prev"><</button>
+                <button id="next">></button>
+            </div>
+            <div class="time"></div>
+        </div>
+        <script src="script.js"></script>
     </header>
-    <div class="carousel-container" role="region" aria-label="Product image carousel">
-      <div class="carousel" id="carousel">
-        <img src="melanin.jpg" alt="Blue Nike Sneakers Size 10" loading="lazy">
-        <img src="need.jpg" alt="Sony Wireless Headphones WH-1000XM5" loading="lazy">
-        <img src="world.jpg" alt="Apple Watch Series 9 Black" loading="lazy">
-      </div>
-      <button class="arrow left" onclick="prevSlide()" aria-label="Previous slide">&#10094;</button>
-      <button class="arrow right" onclick="nextSlide()" aria-label="Next slide">&#10095;</button>
-    </div>
-    <script src="script.js" defer></script>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Shop</a>
-        <a href="#">Deals</a>
-        <a href="#">Contact</a>
-        <a href="#">Cart</a>
-    </nav>
-    <section class="hero">
-        <h2>Welcome to ShopEase</h2>
-        <p>Discover the latest products and exclusive deals. Shop with ease and confidence!</p>
-    </section>
     <section class="products">
         <div class="product-card">
             <img src="https://via.placeholder.com/200x150/0074D9/ffffff?text=Product+1" alt="Product 1">
