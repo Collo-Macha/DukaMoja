@@ -4,6 +4,7 @@ body {
     font-family: Arial, sans-serif;
     color: #0e0e0e;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 header {
     background-color: #f9eccc;
@@ -21,19 +22,21 @@ h1, h2 {
     justify-content: space-between;
     align-items: center;
     padding: 0 2em;
-    border: #000 3px solid;
 }
 .sideMenu{
     z-index: 200;
 }
 .headerWrapper1{
     z-index: 100;
-    height: 100%;
+    height: 100vh;
     width: 180px;
     position: absolute;
-    background-color: white;
+    background-color: #f2fdff;
     transition: 0.5s ease;
     transform: translateX(-180px);
+}
+.sideCheck1 {
+    display: none;
 }
 .sideMenu{
     color: #000;
@@ -43,37 +46,33 @@ h1, h2 {
     padding-right: 30px;
     pointer-events: none;
 }
-.side .sideLink{
+.side{
     list-style: none;
 }
-.side .sideLink a {
+.sideLink a {
     color: #000;
     font-weight: 600;
-    padding: 5px 0;
+    padding: 10px;
+    margin-left: -50px;
     display: block;
     text-transform: capitalize;
     text-decoration: none;
     transition: 0.2s ease-out;
 }
 .side .sideLink:hover a{
-    width: 40px;
-    background-color: #5aa9ef;
+    background-color: #71c4f4;
 }
 .side .sideLink a i {
-    width: 40px;
+    width: 100px;
     text-align: center;
-}
-input{
-    display: none;
-    visibility: hidden;
 }
 .toggle {
     position: absolute;
     height: 30px;
     width: 30px;
-    top: 25px;
+    top: 33px;
     left: 20px;
-    z-index: 1;
+    z-index: 1000;
     cursor: pointer;
     border-radius: 2px;
     background-color: #f0eded;
@@ -122,39 +121,11 @@ input:checked ~ .headerWrapper1{
     transform: translateX(0px);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
-/* Add to homepage.css */
-.search-bar input[type="search"] {
-    padding: 0.5em;
-    width: 220px;
-    height: 30px;
-    border-radius: 4px;
-    background-color: #000;
-    border: 1px solid #ccc;
-}
-.search-bar button {
-    width: 220px;
-    padding: 0.5em 1em;
-    border-radius: 4px;
-    border: none;
-    background: #4194b3;
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-}
-.search-bar {
-    height: 50px;
-    width: 250px;
-    border: #000 3px solid;
-    margin: 10px;
-    margin-right: 30px;
-    text-align: center;
-}
+
 nav.menu {
-    margin-top: -20px;
     text-align: center;
-    width: 1000px;
+    width: 80%;
     display: flex;
-    border: #000 3px solid;
 }
 nav.menu a {
     color: #080808;
@@ -173,9 +144,66 @@ nav.menu a:hover {
     transform: scaleX(1.2) scaleY(1.05);
     transition: transform 0.2s, background-color 0.2s;
 }
+.searchBox {
+    background-color: whitesmoke;
+    border-radius: 5px;
+    margin: 15px;
+    border: black 1px solid;
+    width: 20em;
+}
+.row{
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+#inputBox {
+    flex: 2;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background: transparent;
+    color: #005fa3;
+    height: 10px;
+}
+.press{
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.press:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+.fa-solid{
+    color: #005fa3;
+    font-size: 1.2rem;
+    width: 25px;
+    cursor: pointer;
+    background: transparent;
+}
+::placeholder{
+    color: #0a0a0a;
+    opacity: 0.7;
+}
+.resultBox ul{
+    border-top: 1px solid #000;
+    padding: 5px 5px;
+}
+.resultBox ul li{
+    list-style: none;
+    padding: 15px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.resultBox ul li:hover{
+    background-color: #69aaebbd;
+}
 .hero {
     padding: 2em;
     text-align: center;
+    margin-top: -2.5em;
 }
 .hero h2 {
     color: #111;
