@@ -7,42 +7,61 @@
     <meta name="keywords" content="ecommerce, online shopping, food, dukamoja, deals, discounts">
     <link rel="stylesheet" href="homepage.css">
     <meta name="robots" content="index, follow">
+    <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/0abbc8a7f0.js" crossorigin="anonymous"></script>
     <title>DukaMoja - Home</title>
 </head>
 <body>
     <header>
-        <Label class="sideCheck">
-            <input type="checkbox" class="sideCheck1">
-            <div class="toggle">                    <span class="top_line common"></span>
-                <span class="top_line common"></span>
-                <span class="middle_line common"></span>
-                <span class="bottom_line common"></span>
-            </div>
-            <div class="headerWrapper1">
-                <h1 class="sideMenu">MENU</h1>
-                <ul class="side">
-                    <li class="sideLink"><a href="#"><i class="fa-brands fa-facebook">facebook</i></a></li>
-                    <li class="sideLink"><a href="#"><i class="fa-brands fa-twitter">twitter</i></a></li>
-                    <li class="sideLink"><a href="#"><i class="fa-brands fa-instagram">instagram</i></a></li>
-                </ul>
-            </div>
-        </Label>
-        <div class="headerWrapper">
-            <nav class="menu">
-                <a href="#">Home</a>
-                <a href="#">Shop</a>
-                <a href="#">Deals</a>
-                <a href="#">Contact</a>
-                <a href="#">Cart</a>
+        <nav class="logo">
+            <h1 class="logoName">DukaMoja</h1>
+            <img class="logoImg" src="logo3.jpeg" alt="logo" loading="lazy">
+            <nav class="menuShop">
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="#"><i class="fa-solid fa-user"></i></a>
             </nav>
-            <div class="searchBox">
-            <div class="row">
-                <input type="text" id="inputBox" placeholder="Search products..." autocomplete="off">
-                <button class="press"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </nav>
+        <nav class="contain">
+            <Label class="sideCheck">
+                <input type="checkbox" class="sideCheck1">
+                <div class="toggle">                    
+                    <span class="top_line common"></span>
+                    <span class="middle_line common"></span>
+                    <span class="bottom_line common"></span>
+                </div>
+                <div class="headerWrapper1">
+                    <h1 class="sideMenu">MENU</h1>
+                    <ul class="side">
+                        <li class="sideLink"><a href="#">Meals</a></li>
+                        <li class="sideLink"><a href="#">Pastries</a></li>
+                        <li class="sideLink"><a href="#">Fast Foods</a></li>
+                        <li class="sideLink"><a href="#">Beverages</a></li>
+                        <li class="sideLink"><a href="#">Alcoholic Drinks</a></li>
+                        <li class="sideLink"><a href="#">Hotels</a></li>
+                    </ul>
+                </div>
+                
+            </Label>
+
+            <div class="headerWrapper">
+                <nav class="menu">
+                    <a href="#">Home</a>
+                    <a href="#">Delivery</a>
+                    <a href="#">Deals</a>
+                    <a href="#">Reviews</a>
+                </nav>
+                <div class="searchBox">
+                    <div class="row">
+                        <input type="text" id="inputBox" placeholder="Search products..." autocomplete="off">
+                        <button class="press"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                    <div class="result-box">
+                    </div>
+                </div>
             </div>
-            </div>
-        </div>
+
+        </nav>
+        
         <section class="hero">
             <h2>Welcome to DukaMoja </h2>
             <p>Discover the latest products and exclusive deals. Shop with ease and confidence!</p>
